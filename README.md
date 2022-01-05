@@ -8,7 +8,7 @@ In a different part of this project I'm working on:
 
 ```typescript
 build = getTravisBuildId();
-build.pipe(TravisBuldId);
+build.pipe(TravisBuildId);
 ```
 
 Both lines are executed in the same tick, and the first data event can't possibly occur until the next tick - that's how the interpreter works internally. This means that you have a guarantee that the `.pipe` is processed before the first data event fires, and everything will work as expected.
